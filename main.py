@@ -10,7 +10,23 @@ genai.configure(api_key="AIzaSyAtCY_9Guak894u4O_3vXksvG_-IuUDNjc")
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('page1.html')
+
+
+@app.route('/get strated')
+def page2():
+    return render_template('page2.html')
+
+
+@app.route('/uploda')
+def page3():
+    return render_template('page3.html')
+
+
+@app.route('/TTS')
+def page4():
+    return render_template('page4.html')
+
 
 @app.route('/summarize', methods=['POST'])
 def summarize_text():
