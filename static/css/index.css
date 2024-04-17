@@ -1,0 +1,139 @@
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    padding: 4.5em;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0.1em;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.dush-flex {
+    display: flex;
+    align-items: center;
+    padding: 0.1em;
+    flex-direction: column;
+    position: relative;
+    left: 35px;
+ }
+
+.sflex {
+    display: flex;
+    gap: 60px;
+}
+
+.start-flex {
+    display: flex;
+    align-items: center;
+    padding: 0.1em;
+    flex-direction: column;
+    position: relative;
+    left: 35px;
+ }
+
+.upload-flex {
+    display: flex;
+    align-items: center;
+    padding: 0.1em;
+    flex-direction: column;
+    position: relative;
+    left: 3px;
+ } 
+
+.upload-icon {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+    right: 30px;
+}
+
+.tts-icon {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+    right: 30px;
+}
+
+.mobile-img {
+    display: flex;
+    position: relative;
+    right: 15px;
+}
+
+.rect {
+    background: blue;
+    width: 12px;
+    height: 12px;
+    border: 0.1px white solid;
+    border-radius: 0.1px;
+    padding: 1em;
+    position: relative;
+}
+
+.smallcircle {
+    background: blue;
+    width: 0.1px;
+    height: 0.1px;
+    border: 0.1px white solid;
+    border-radius: 35px;
+    padding: 1em;
+    position: relative;
+    top: -20px;
+    left: 40px;
+}
+
+.horizontal-sign {
+    position: relative;
+}
+
+@media only screen and (min-width: 410px) {
+    .mobile-img {
+        display: hidden;
+    }
+
+    .sflex {
+        display: flex;
+        gap: 60px;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .horizontal-sign {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dush-flex {
+        display: flex;
+        align-items: center;
+        padding: 0.1em;
+        flex-direction: column;
+        position: relative;
+        left: 3px;
+     }
+
+    .homem {
+        display: flex;
+        position: relative;
+        align-items: center;
+    }
+}

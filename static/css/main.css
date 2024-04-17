@@ -1,0 +1,302 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 8em;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+
+@keyframes uuu {
+    from {left: 0px; top: 0px;}
+    to {left: 70px; top: -25px;}
+  }
+
+@keyframes sss {
+    from {top: 0px; left: 0px;}
+    to {top: -25px; left: -70px;}
+  }
+
+@keyframes hee {
+    from {left: 0px; top: 0px;}
+    to {left: -150px; top: -25px;}
+  }
+
+.rectone-d {
+    background: white;
+    color: black;
+    width: 12px;
+    height: 12px;
+    border: 1px white solid;
+    border-radius: 25px;
+    padding: 1em;
+    position: relative;
+    animation-name: dee;
+    animation-duration: 8s;
+    animation-delay: 8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes dee {
+    from {top: 0px; left: 0px;}
+    to {top: -25px; left: 150px;}
+  }
+
+.recttwo-u {
+    background: none;
+    width: 12px;
+    height: 12px;
+    border: 1px white solid;
+    border-radius: 25px;
+    padding: 1em;
+    position: relative;
+    animation-name: uuu;
+    animation-duration: 8s;
+    animation-delay: 8s;
+    animation-iteration-count: infinite;
+}
+
+
+.rectone-s {
+    background: white;
+    color: black;
+    width: 12px;
+    height: 12px;
+    border: 1px white solid;
+    border-radius: 25px;
+    padding: 1em;
+    position: relative;
+    animation-name: sss;
+    animation-duration: 8s;
+    animation-delay: 8s;
+    animation-iteration-count: infinite;
+}
+
+.recttwo-h {
+    background: none;
+    width: 12px;
+    height: 12px;
+    border: 1px white solid;
+    border-radius: 25px;
+    padding: 1em;
+    position: relative;
+    animation-name: hee;
+    animation-duration: 8s;
+    animation-delay: 8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slidel {
+    from {left: 400px;}
+    to {left: 40px;}
+  }
+
+@keyframes slider {
+    from {right: 400px;}
+    to {right: 40px;}
+  }
+
+
+.horizontal-left {
+    background: white;
+    width: 72px;
+    height: 0.1px;
+    border: 1px white solid;
+    border-radius: 8px;
+    position: absolute;
+    padding: 1px;
+    animation: slidel 8s infinite;
+}
+
+.horizontal-right {
+    background: white;
+    width: 72px;
+    height: 0.1px;
+    border: 1px white solid;
+    border-radius: 8px;
+    position: absolute;
+    padding: 1px;
+    animation: slider 8s infinite;
+}
+
+.horizontal-flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.dush-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Mobile Responsiveness */
+
+@media only screen and (max-width: 600px) {
+.container {
+     max-width: 500px;
+     margin: 0 auto;
+     padding: 0.5em;
+    }
+
+.dush-flex {
+     display: flex;
+     align-items: center;
+     padding: 0.1em;
+     justify-content: center;
+     gap: 5px;
+  }
+
+p {
+    line-height: 2.6;
+    margin-bottom: 10px;
+    width: 200px;
+  }
+
+ul {
+    line-height: 1.8;
+    width: 170px;
+    position: relative;
+    right: 30px;
+  }
+
+@keyframes slidel {
+    from {left: 420px;}
+    to {left: 100px;}
+  }
+
+@keyframes slider {
+    from {right: 420px;}
+    to {right: 100px;}
+  }
+
+.horizontal-left {
+    background: white;
+    width: 62px;
+    height: 0.1px;
+    border: 1px white solid;
+    border-radius: 8px;
+    position: absolute;
+    padding: 1px;
+    animation: slidel 8s infinite;
+}
+
+.horizontal-right {
+    background: white;
+    width: 62px;
+    height: 0.1px;
+    border: 1px white solid;
+    border-radius: 8px;
+    position: absolute;
+    padding: 1px;
+    animation: slider 8s infinite;
+}
+
+.rectone-d {
+    background: white;
+    color: black;
+    width: 12px;
+    height: 12px;
+    border: 1px white solid;
+    border-radius: 25px;
+    padding: 1em;
+    position: relative;
+    animation-name: dee;
+    animation-duration: 8s;
+    animation-delay: 8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes dee {
+    from {left: 0px;}
+    to {left: -10px;}
+  }
+
+.recttwo-u {
+    background: none;
+    width: 12px;
+    height: 12px;
+    border: 1px white solid;
+    border-radius: 25px;
+    padding: 1em;
+    position: relative;
+    animation-name: uuu;
+    animation-duration: 8s;
+    animation-delay: 8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes uuu {
+    from {left: 0px;}
+    to {left: -10px;}
+  }
+
+.rectone-s {
+    background: white;
+    color: black;
+    width: 12px;
+    height: 12px;
+    border: 1px white solid;
+    border-radius: 25px;
+    padding: 1em;
+    position: relative;
+    animation-name: sss;
+    animation-duration: 8s;
+    animation-delay: 8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes sss {
+    from {right: 0px;}
+    to {right: 10px;}
+  }
+
+
+.recttwo-h {
+    background: none;
+    width: 12px;
+    height: 12px;
+    border: 1px white solid;
+    border-radius: 25px;
+    padding: 1em;
+    position: relative;
+    animation-name: hee;
+    animation-duration: 8s;
+    animation-delay: 8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes hee {
+    from {right: 0px;}
+    to {right: 10px;}
+  }
+
+
+
+}
+  

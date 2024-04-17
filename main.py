@@ -10,15 +10,10 @@ genai.configure(api_key="AIzaSyAtCY_9Guak894u4O_3vXksvG_-IuUDNjc")
 
 @app.route('/')
 def home():
-    return render_template('page1.html')
-
-
-@app.route('/get strated')
-def page2():
     return render_template('page2.html')
 
 
-@app.route('/uploda')
+@app.route('/upload')
 def page3():
     return render_template('page3.html')
 
