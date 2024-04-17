@@ -14,6 +14,41 @@
     </form>
     <div id="summary"></div>
 
+    <form action="/submit_login_details" method="post">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Enter your username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                        <p>New User? <a href="#"  data-toggle="modal" data-target="#signupModal">Sign Up</a></p>
+                    </form>
+
+
+    <form action="/signup" method="post">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" class="form-control"name="username" placeholder="Enter your username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="useremail">Email:</label>
+                            <input type="email" class="form-control" name="useremail" placeholder="Enter your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" name="password" placeholder="Enter your password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rpt-password">Repeat Password:</label>
+                            <input type="password" class="form-control" name="rpt-password" placeholder="Enter your password again" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                        <p>already have an account? <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#loginModal">login</a></p>
+                    </form>
+
     <script>
         document.getElementById("summarize-form").addEventListener("submit", function(event) {
             event.preventDefault();
