@@ -1,16 +1,42 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from flask import Flask, request, jsonify, render_template
+import google.generativeai as genai
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+app = Flask(__name__)
+
+# Set your API key
+genai.configure(api_key="AIzaSyAtCY_9Guak894u4O_3vXksvG_-IuUDNjc")
 
 
-# Press the green button in the gutter to run the script.
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/summarize', methods=['POST'])
+def summarize_text():
+    try:
+        # Get the text to summarize from the request
+        data = request.json
+        print("Received data:", data)  # Debugging statement
+        text = data['text']
+        print("Received text:", text)  # Debugging statement
+
+        model = genai.GenerativeModel('gemini-pro')
+        prompt = f"summarize this text{text}"
+        response = model.generate_content(prompt)
+
+        # Extract the summary text from the response
+        summary_text = response.text
+
+        # Return the summary
+        return jsonify({'summary': summary_text}), 200
+
+    except Exception as e:
+        # Print the exception for debugging
+        print("Error:", e)
+        # Handle other unexpected errors
+        return jsonify({'error': 'Unexpected error occurred: {}'.format(str(e))}), 500
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    app.run(debug=True)
