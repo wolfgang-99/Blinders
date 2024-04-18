@@ -4,6 +4,7 @@ from server import authenticate_user, create_user_account
 import os
 from dotenv import load_dotenv
 from datetime import timedelta
+import PIL.Image
 
 
 load_dotenv()
@@ -81,15 +82,15 @@ def logout():
     return redirect(url_for("Home", _rnd=request.args.get("_rnd", None)))
 @app.route('/')
 def home():
-    return render_template('page1.html')
+    return render_template('index.html')
 
 @app.route('/get-started')
 def get_started():
-    return render_template('page2.html')
+    return render_template('index.html')
 
 @app.route('/upload')
 def upload():
-    return render_template('index.html')
+    return render_template('page3.html')
 
 
 @app.route('/TTS')
@@ -110,6 +111,9 @@ def summarize_text():
         prompt = f"summarize this text{text}"
         response = model.generate_content(prompt)
 
+        # print response feedback
+        print(response.prompt_feedback)
+
         # Extract the summary text from the response
         summary_text = response.text
 
@@ -119,8 +123,29 @@ def summarize_text():
     except Exception as e:
         # Print the exception for debugging
         print("Error:", e)
+
         # Handle other unexpected errors
         return jsonify({'error': 'Unexpected error occurred: {}'.format(str(e))}), 500
+
+
+@app.route('/uploadIMG', methods=['POST'])
+def uploadIMG():
+    if 'image' not in request.files:
+        return jsonify({'message': 'No file part'})
+
+    img_data = request.files['image']
+    img = PIL.Image.open(img_data)
+
+    # process image genai
+    model = genai.GenerativeModel('gemini-pro-vision')
+    response = model.generate_content(img)
+    response_img = response.text
+
+    # print response feedback
+    print(response.prompt_feedback)
+
+    return jsonify({'message': f'{response_img}'})
+
 
 @app.route('/')
 def root():

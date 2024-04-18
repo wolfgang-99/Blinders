@@ -12,43 +12,19 @@
         <textarea id="text" name="text" rows="10" cols="50"></textarea><br>
         <button type="submit">Summarize</button>
     </form>
+    <br>
+    <br>
+    <h1>Upload an Image</h1>
+    <form id="uploadIMG" enctype="multipart/form-data">
+        <input type="file" name="image" id="imageInput" accept="image/*">
+        <button type="submit">Upload</button>
+    </form>
+    <br>
+    <br>
     <div id="summary"></div>
 
-    <form action="/submit_login_details" method="post">
-                        <div class="form-group">
-                            <label for="username">Username:</label>
-                            <input type="text" class="form-control" name="username" id="username" placeholder="Enter your username" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
-                        <p>New User? <a href="#"  data-toggle="modal" data-target="#signupModal">Sign Up</a></p>
-                    </form>
 
-
-    <form action="/signup" method="post">
-                        <div class="form-group">
-                            <label for="username">Username:</label>
-                            <input type="text" class="form-control"name="username" placeholder="Enter your username" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="useremail">Email:</label>
-                            <input type="email" class="form-control" name="useremail" placeholder="Enter your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input type="password" class="form-control" name="password" placeholder="Enter your password" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="rpt-password">Repeat Password:</label>
-                            <input type="password" class="form-control" name="rpt-password" placeholder="Enter your password again" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Sign Up</button>
-                        <p>already have an account? <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#loginModal">login</a></p>
-                    </form>
-
+    <!-- script for summary api -->
     <script>
         document.getElementById("summarize-form").addEventListener("submit", function(event) {
             event.preventDefault();
@@ -70,6 +46,28 @@
             })
             .catch(error => {
                 console.error("Error:", error);
+            });
+        });
+    </script>
+    <!-- script for imag to text -->
+    <script>
+        document.getElementById("uploadIMG").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var formData = new FormData();
+            var fileInput = document.getElementById('imageInput');
+            formData.append('image', fileInput.files[0]);
+
+            fetch('/uploadIMG', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                document.getElementById('summary').innerText = data.message;
+            })
+            .catch(error => {
+                console.error('Error:', error);
             });
         });
     </script>
