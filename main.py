@@ -82,7 +82,7 @@ def logout():
     return redirect(url_for("Home", _rnd=request.args.get("_rnd", None)))
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('page1.html')
 
 @app.route('/get-started')
 def get_started():
